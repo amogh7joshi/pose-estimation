@@ -1,0 +1,18 @@
+venv/
+__pycache__/
+**/__pycache__/
+.idea/
+**/.DS_Store
+.DS_Store
+.ipynb_checkpoints
+
+# My Personal Files and Directories
+images/
+modded/
+output/
+test_imgs/
+models/
+data/weights/*
+**test*.py
+conversion.sh
+gettest.py

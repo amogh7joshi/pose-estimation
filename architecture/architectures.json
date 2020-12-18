@@ -1,0 +1,57 @@
+{
+  "MODELS": [
+        "mobilenet_v1_050",
+        "mobilenet_v1_075",
+        "mobilenet_v1_100",
+        "mobilenet_v1_101"
+    ],
+    "mobilenet-v1-050-arch": [
+        ["Convolution", 3, 16, 2],
+        ["SeparableConv", 16, 32, 1],
+        ["SeparableConv", 32, 64, 2],
+        ["SeparableConv", 64, 64, 1],
+        ["SeparableConv", 64, 128, 2],
+        ["SeparableConv", 128, 128, 1],
+        ["SeparableConv", 128, 256, 2],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 256, 1]
+    ],
+    "mobilenet-v1-075-arch": [
+        ["Convolution", 3, 24, 2],
+        ["SeparableConv", 24, 48, 1],
+        ["SeparableConv", 48, 96, 2],
+        ["SeparableConv", 96, 96, 1],
+        ["SeparableConv", 96, 192, 2],
+        ["SeparableConv", 192, 192, 1],
+        ["SeparableConv", 192, 384, 2],
+        ["SeparableConv", 384, 384, 1],
+        ["SeparableConv", 384, 384, 1],
+        ["SeparableConv", 384, 384, 1],
+        ["SeparableConv", 384, 384, 1],
+        ["SeparableConv", 384, 384, 1],
+        ["SeparableConv", 384, 384, 1],
+        ["SeparableConv", 384, 384, 1]
+
+    ],
+    "mobilenet-v1-100-arch": [
+        ["Convolution", 3, 32, 2],
+        ["SeparableConv", 32, 64, 1],
+        ["SeparableConv", 64, 128, 2],
+        ["SeparableConv", 128, 128, 1],
+        ["SeparableConv", 128, 256, 2],
+        ["SeparableConv", 256, 256, 1],
+        ["SeparableConv", 256, 512, 2],
+        ["SeparableConv", 512, 512, 1],
+        ["SeparableConv", 512, 512, 1],
+        ["SeparableConv", 512, 512, 1],
+        ["SeparableConv", 512, 512, 1],
+        ["SeparableConv", 512, 512, 1],
+        ["SeparableConv", 512, 1024, 2],
+        ["SeparableConv", 1024, 1024, 1]
+    ]
+}
