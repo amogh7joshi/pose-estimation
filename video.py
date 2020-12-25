@@ -31,7 +31,7 @@ vr.set(4, 720)
 
 while True:
    _, frame = vr.read()
-   input_image, draw_image, output_scale = load_image(frame)
+   input_image, draw_image, output_scale = load_image(frame, resize = 513)
 
    with torch.no_grad():
       input_image = torch.Tensor(input_image)

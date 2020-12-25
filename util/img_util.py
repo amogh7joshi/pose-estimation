@@ -4,17 +4,30 @@ import sys
 import cv2
 import numpy as np
 
-def load_image(image_path, **kwargs):
+def load_image(image_path, resize = (None, None), **kwargs):
+   _resize = None
    # Parse Kwargs.
    if len(kwargs) > 2:
       raise ValueError("You have provided too many keyword arguments.")
    for kwarg in kwargs:
       if kwarg not in ['scale_factor', 'output_stride']:
          raise ValueError("You have provided an invalid keyword argument. Valid keyword arguments are: scale_factor, output_stride")
+   if resize:
+      if not isinstance(resize, (list, tuple, set, int)):
+         raise TypeError("You have provided an invalid value for the resize argument.")
+      if isinstance(resize, int):
+         _resize = (resize, resize)
+      else:
+         if len(resize) > 2:
+            raise ValueError("You can only resize an image by two dimensions.")
+         else:
+            _resize = resize
 
    # Verify And Load Image (a lot of verifications).
    try:
       image = cv2.imread(image_path)
+      if _resize:
+         image_path = cv2.resize(image_path, dsize=_resize, interpolation=cv2.INTER_LINEAR)
       if image is None:
          raise SystemError
       try:
@@ -25,6 +38,8 @@ def load_image(image_path, **kwargs):
          raise e
    except SystemError:
       try:
+         if _resize:
+            image_path = cv2.resize(image_path, dsize = _resize, interpolation = cv2.INTER_LINEAR)
          return process_input(image_path, **kwargs)
       except Exception as e:
          raise e
