@@ -14,5 +14,4 @@ test_imgs/
 models/
 data/weights/*
 **test*.py
-conversion.sh
 gettest.py
