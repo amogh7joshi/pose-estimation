@@ -80,13 +80,11 @@ def download_file(base_dir = None, model = None, mode = 'clear') -> None:
 if __name__ == '__main__':
    # Mode to run by, which model to download.
    ap = argparse.ArgumentParser()
-   ap.add_argument('-m', '--mode', default='renew',
-                   help="Mode: [renew] to only download nonexistent files, [clear] to clear and re-download all files.")
-   ap.add_argument('-o', '--model', default='mobilenet_v1_101',
-                   help="Model: Which model you want to download. ")
+   ap.add_argument('-m', '--mode', default = 'renew',
+                   help = "Mode: [renew] to only download nonexistent files, [clear] to clear and re-download all files.")
+   ap.add_argument('-o', '--model', default = 'mobilenet_v1_101',
+                   help = "Model: Which model you want to download. ")
    args = vars(ap.parse_args())
 
    # Process.
-   download_file(model=args['model'], mode=args['mode'])
-
-   
+   download_file(model = args['model'], mode = args['mode'])
