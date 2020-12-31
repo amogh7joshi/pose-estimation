@@ -44,31 +44,3 @@ class SeparableConv(nn.Module):
       return x
 
 
-def convert_strided_layers(architecture, output_strides):
-   stride = 1; rate = 1
-   layer_info = []
-
-   # Create information dictionary about strides and rate for future model construction.
-   for indx, layer in enumerate(architecture):
-      type = layer[0]
-      strides = layer[1]
-
-      if stride == output_strides:
-         layer_stride = 1
-         layer_rate = rate
-         rate *= strides
-      else:
-         layer_stride = strides
-         layer_rate = 1
-         stride *= strides
-
-      layer_info.append({
-         'blockID': indx,
-         'type': type,
-         'stride': layer_stride,
-         'rate': layer_rate,
-         'outputStride': stride
-      })
-
-   return layer_info
-
